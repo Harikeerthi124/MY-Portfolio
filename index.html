@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biyyapu Hari Keerthi - Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav id="main-nav">
+    <div class="container">
+      <div class="nav-content">
+        <div class="logo">BHK</div>
+        <div class="nav-links">
+          <button class="nav-link" data-section="about">About</button>
+          <button class="nav-link" data-section="experience">Experience</button>
+          <button class="nav-link" data-section="skills">Skills</button>
+          <button class="nav-link" data-section="projects">Projects</button>
+          <button class="nav-link" data-section="education">Education</button>
+          <button class="nav-link" data-section="contact">Contact</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="section">
+    <div class="hero-bg">
+      <div class="hero-blob hero-blob-1"></div>
+      <div class="hero-blob hero-blob-2"></div>
+      <div class="hero-blob hero-blob-3"></div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span id="firstName">BIYYAPU SAI HARI</span>
+          <span id="lastName">KRISHNA</span>
+        </h1>
+        <p class="hero-subtitle" id="title"></p>
+        <p class="hero-description" id="subtitle"></p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary" data-section="projects">View My Work</button>
+          <button class="btn btn-outline" data-section="contact">Get In Touch</button>
+          <a href="https://drive.usercontent.google.com/u/0/uc?id=1Vz5a2u6YUtk91A5r5ov5plfCTFgwKi_d&export=download" download>
+            <button class="btn btn-outline btn-download">
+              <i class="fas fa-download"></i>
+              Download Resume
+            </button>
+          </a>
+
+        </div>
+        <div class="social-links">
+          <a href="#" id="github-link" target="_blank" class="social-link">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="#" id="linkedin-link" target="_blank" class="social-link">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="#" id="email-link" class="social-link">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">About Me</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="about-content">
+        <div class="about-text">
+          <div class="card gradient-card">
+            <p id="about-description" class="about-paragraph"></p>
+            <p id="about-objective" class="about-paragraph"></p>
+            <div class="about-details">
+              <div class="about-detail">
+                <i class="fas fa-map-marker-alt"></i>
+                <span id="location"></span>
+              </div>
+              <div class="about-detail">
+                <i class="fas fa-phone"></i>
+                <span id="phone"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-skills">
+          <div class="skill-card">
+            <i class="fas fa-microchip"></i>
+            <h3>Hardware & FPGA</h3>
+            <p>Verilog HDL, FPGA Programming, ModelSim, Vivado</p>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-brain"></i>
+            <h3>AI & ML</h3>
+            <p>Machine Learning, Deep Learning (CNN), Linear Regression</p>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-database"></i>
+            <h3>Data & Analytics</h3>
+            <p>SQL, Power BI, Python (Pandas, NumPy)</p>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-code"></i>
+            <h3>Programming</h3>
+            <p>Python, C++, C, HTML, CSS, Django</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="interests-section">
+        <h3>Areas of Interest</h3>
+        <div class="interests-container" id="interests-container"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Experience</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="experience-container" id="experience-container">
+        <!-- Experience cards will be inserted here by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Skills</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="skills-grid" id="skills-grid">
+        <!-- Skill categories will be inserted here by JavaScript -->
+      </div>
+      <div class="soft-skills-section">
+        <h3>Soft Skills</h3>
+        <div class="soft-skills-container" id="soft-skills-container">
+          <!-- Soft skills will be inserted here by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="projects-grid" id="projects-grid">
+        <!-- Project cards will be inserted here by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Education</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="education-container" id="education-container">
+        <!-- Education cards will be inserted here by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section id="achievements" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Achievements & Certifications</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="achievements-grid">
+        <div class="achievements-column">
+          <div class="card">
+            <div class="card-header">
+              <h3><i class="fas fa-award award-icon-yellow"></i> Achievements</h3>
+            </div>
+            <div class="card-content" id="achievements-container">
+              <!-- Achievement items will be inserted here by JavaScript -->
+            </div>
+          </div>
+        </div>
+        <div class="achievements-column">
+          <div class="card">
+            <div class="card-header">
+              <h3>
+                <i class="fas fa-award award-icon-blue"></i> Certifications
+                <span class="clickable-text">(clickable)</span>
+              </h3>
+            </div>
+            <div class="card-content" id="certifications-container">
+              <!-- Certification items will be inserted here by JavaScript -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="section-divider"></div>
+        <p class="section-description">
+          I'm always open to discussing new opportunities, collaborations, or just having a chat about technology and
+          innovation.
+        </p>
+      </div>
+      <div class="contact-grid" id="contact-grid">
+        <!-- Contact cards will be inserted here by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p id="footer-text"></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
