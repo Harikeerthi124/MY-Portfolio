@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biyyapu Hari Keerthi - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #110c63 100%, #764ba2 0%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #555;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            color: #667eea;
+            transform: translateY(-2px);
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: #333;
+            position: relative;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transform: translateY(0);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-category h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            border-color: #667eea;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #667eea;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .project-tech {
+            color: #667eea;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .project-description {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-left: 20px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -35px;
+            top: 25px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #667eea;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #667eea;
+        }
+
+        .timeline-date {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        .achievements-list {
+            list-style: none;
+        }
+
+        .achievement-item {
+            background: #f8f9fa;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .achievement-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+            .projects-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .cgpa-highlight {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: bold;
+            margin: 10px 0;
+            box-shadow: 0 10px 25px rgba(245, 87, 108, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1 style="font-family: 'Times New Roman', Times, serif;">BIYYAPU HARI KEERTHI</h1>
+            <p class="subtitle" style="font-style: italic;">Electronics & Communication Engineering Graduate</p>
+            <p style="font-style: italic;">Passionate about VLSI Design, Machine Learning & Cutting-edge Technologies</p>
+
+            <div class="contact-info">
+                <a href="tel:6302339574" class="contact-item">
+                    📞 +91 6302339574
+                </a>
+                <a href="mailto:harikeerthi124@gmail.com" class="contact-item">
+                    ✉️ harikeerthi124@gmail.com
+                </a>
+                <a href="mailto:126004054@sastra.ac.in" class="contact-item">
+                    ✉️ 126004054@sastra.ac.in
+                </a>
+                <div class="contact-item">
+                    📍 Sastra University, Thanjavur, Tamil Nadu
+                </div>
+            </div>
+        </div>
+
+        <!-- Academic Excellence Section -->
+        <div class="section">
+            <h2>🎓 Academic Excellence</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">9.75</div>
+                    <div class="stat-label">Current CGPA</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">97.7%</div>
+                    <div class="stat-label">12th Standard</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">99.33%</div>
+                    <div class="stat-label">10th Standard</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Major Projects</div>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2022-2026</div>
+                    <div class="timeline-title">B.Tech. Electronics and Communication Engineering</div>
+                    <p>SASTRA Deemed University</p>
+                    <div class="cgpa-highlight">Current CGPA: 9.75/10</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2020-2022</div>
+                    <div class="timeline-title">Intermediate (12th Standard)</div>
+                    <p>Narayana Junior College - 97.7%</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2014-2020</div>
+                    <div class="timeline-title">Secondary School (10th Standard)</div>
+                    <p>Ratnam High School - 99.33%</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Skills Section -->
+        <div class="section">
+            <h2>💻 Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Hardware Description & VLSI</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Verilog HDL</span>
+                        <span class="skill-tag">FPGA Programming</span>
+                        <span class="skill-tag">Semi-custom VLSI</span>
+                        <span class="skill-tag">Full-custom VLSI</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Web Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Django</span>
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Design Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Cadence</span>
+                        <span class="skill-tag">ModelSim</span>
+                        <span class="skill-tag">Quartus</span>
+                        <span class="skill-tag">Xilinx Vivado</span>
+                        <span class="skill-tag">MATLAB</span>
+                        <span class="skill-tag">CST</span>
+                        <span class="skill-tag">LT Spice</span>
+                        <span class="skill-tag">Power BI</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Projects Section -->
+        <div class="section">
+            <h2>🚀 Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-title">Sea Debris Detection using Deep Learning</div>
+                    <div class="project-tech">InceptionResNetV2, Python, Google Colab, COCO Dataset</div>
+                    <div class="project-description">
+                        Built a Deep Learning model using InceptionResNetV2 for feature extraction to detect sea debris
+                        among sea creatures, contributing to marine conservation efforts.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-title">Real-Time Water Quality Detection</div>
+                    <div class="project-tech">CNN-LSTM Hybrid, Arduino, Anvil, Python</div>
+                    <div class="project-description">
+                        Developed "Waqua" app with hybrid CNN-LSTM model for real-time water quality assessment using
+                        Arduino-integrated sensors for turbidity, TDS, and temperature.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-title">Machine Failure Prediction</div>
+                    <div class="project-tech">Random Forest, Python, Scikit-learn, Pandas</div>
+                    <div class="project-description">
+                        Engineered a predictive maintenance system analyzing sensor data to enable early detection of
+                        machine failures and minimize unplanned downtime.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-title">Digital to Analog Converter (DAC) - VLSI</div>
+                    <div class="project-tech">Cadence, GPDK180, GDSII</div>
+                    <div class="project-description">
+                        Designed DAC using nmos/pmos transistors, built layout following design rules, passed DRC and
+                        LVS verification, generated fabrication-ready GDSII file.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-title">Temperature Sensor Design</div>
+                    <div class="project-tech">CST Microwave Studio</div>
+                    <div class="project-description">
+                        Designed innovative fabric-based temperature sensor with substrate and patch that changes
+                        resonant frequency according to body temperature variations.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-title">FPGA Vending Machine</div>
+                    <div class="project-tech">Verilog, MAX10 FPGA, ModelSim, Quartus Prime</div>
+                    <div class="project-description">
+                        Implemented a complete vending machine system on FPGA with Verilog, including testbench
+                        verification and RTL schematic generation.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-title">Car Price Prediction</div>
+                    <div class="project-tech">Linear Regression, Python, Google Colab</div>
+                    <div class="project-description">
+                        Developed a car price prediction model using Linear Regression trained on over 1000 instances,
+                        enabling accurate price estimation for new features.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-title">Mini Radio Station using Adalm Pluto</div>
+                    <div class="project-tech">Matlab</div>
+                    <div class="project-description">
+                        Built a basic radio transmission system using Adalm Pluto SDR and Matlab for signal generation
+                        and modulation.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-title">Multiplexer Design - VLSI</div>
+                    <div class="project-tech">Cadence, GPDK180, GDSII</div>
+                    <div class="project-description">
+                        Designed a multiplexer using nmos/pmos transistors, created layout adhering to design rules,
+                        passed DRC and LVS, and generated fabrication-ready GDSII file.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-title">Dehydration Sensor Design</div>
+                    <div class="project-tech">CST Microwave Studio</div>
+                    <div class="project-description">
+                        Designed non-invasive dehydration sensor using microwave resonant frequency shift, with
+                        reflection coefficient up to -35 dB, operating from 0.9 to 10 GHz.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="section">
+            <h2>💼 Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">June 16-21, 2025</div>
+                    <div class="timeline-title">Full Custom VLSI: Front End & Physical Design With 180nm Technode</div>
+                    <p>Gained hands-on experience with CADENCE tools, designed various gates using different CMOS
+                        technologies, analyzed performance metrics, created ring oscillators, and developed amplifier
+                        circuits from transistor level to layout with GDSII file generation.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Achievements Section -->
+        <div class="section">
+            <h2>🏆 Achievements & Recognition</h2>
+            <ul class="achievements-list">
+                <li class="achievement-item">
+                    🥉 <strong>3rd Place</strong> - Logic Gates Competition by ASCIEE Organisation, SASTRA University
+                </li>
+                <li class="achievement-item">
+                    🎓 <strong>Minor Specialization</strong> - Currently pursuing AI & Machine Learning specialization
+                </li>
+                <li class="achievement-item">
+                    🌟 <strong>Blue Star Scholarship</strong> - Awarded company scholarship for academic excellence
+                </li>
+                <li class="achievement-item">
+                    🏛️ <strong>NSP Scholarship</strong> - National Scholarship Portal recognition
+                </li>
+                <li class="achievement-item">
+                    💼 <strong>Temenos Scholarship</strong> - Industry-sponsored scholarship recipient
+                </li>
+            </ul>
+        </div>
+
+        <!-- Certifications Section -->
+        <div class="section">
+            <h2>📜 Certifications</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>VLSI & Hardware</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Digital Design Prototyping (FPGA)</span>
+                        <span class="skill-tag">VLSI for Beginners - NIELIT</span>
+                        <span class="skill-tag">Verilog Workshop - ASCIEE</span>
+                        <span class="skill-tag">LT Spice Workshop - ASCIEE</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>AI/ML & Programming</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">Deep Learning: CNN</span>
+                        <span class="skill-tag">Arduino Programming</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>MATLAB & Simulation</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MATLAB Onramp</span>
+                        <span class="skill-tag">SIMULINK Onramp</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2025 Biyyapu Hari Keerthi. All rights reserved.</p>
+            <p>Ready to contribute to cutting-edge projects in VLSI Design and Machine Learning</p>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scrolling animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'all 0.6s ease-out';
+            observer.observe(section);
+        });
+
+        // Add hover effects for project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add click effect for skill tags
+        document.querySelectorAll('.skill-tag').forEach(tag => {
+            tag.addEventListener('click', () => {
+                tag.style.animation = 'pulse 0.3s ease-in-out';
+                setTimeout(() => {
+                    tag.style.animation = '';
+                }, 300);
+            });
+        });
+
+        // Add pulse animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.1); }
+                100% { transform: scale(1); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+
+</html>
